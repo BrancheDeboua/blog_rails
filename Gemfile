@@ -11,6 +11,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem 'devise', '~> 4.8', '>= 4.8.1'
 
 # gem "redis", "~> 4.0"
 # gem "kredis"
