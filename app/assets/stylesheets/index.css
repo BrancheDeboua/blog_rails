@@ -1,0 +1,14 @@
+.title time{
+    display: inline-block!important;
+    width: 49%!important;
+}
+
+.class-info{
+    display: inline-block!important;
+    width: 49%!important;
+    text-align: right!important;
+}
+
+.class-info span{
+    margin: 0!important;
+}
