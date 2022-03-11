@@ -7,17 +7,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'main' %>
-    <%= stylesheet_link_tag 'fontawesome-all.min' %>
+    
     <%# stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    
   </head>
 
   <body>
-    <div id="wrapper">
+    
       <%= render 'home/header' %>
       <%= yield %>
       <%= render 'home/footer' %>
-    </div>
+    
     <script src="<%= asset_path('js/jquery.min') %>"></script>
     <script src="<%= asset_path('js/browser.min') %>"></script>
     <script src="<%= asset_path('js/breakpoints.min') %>"></script>
