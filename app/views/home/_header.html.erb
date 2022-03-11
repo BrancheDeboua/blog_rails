@@ -11,20 +11,13 @@
 			<nav class="main">
 				<ul>
 					<li class="menu">
-						<a class="fa-bars" href="#menu">Menu</a>
+						<a class="fa-bars" href="#menu"><i class="bi bi-person"></i></a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 	<!-- Menu -->
 		<section id="menu">
-
-			<!-- Search -->
-				<section>
-					<form class="search" method="get" action="#">
-						<input type="text" name="query" placeholder="Search" />
-					</form>
-				</section>
 
 			<!-- Links -->
 				<section>
@@ -47,20 +40,18 @@
 								<p>Phasellus sed ultricies mi congue</p>
 							</a>
 						</li>
-						<li>
-							<a href="#">
-								<h3>Etiam sed consequat</h3>
-								<p>Porta lectus amet ultricies</p>
-							</a>
-						</li>
 					</ul>
 				</section>
 
 			<!-- Actions -->
 				<section>
 					<ul class="actions stacked">
-						<li><%= button_to "logout", destroy_user_session_path, method: :delete %></li>
-						<li><a href="#" class="button large fit">Log In</a></li>
+						<% if user_signed_in? %>
+							<li><%= button_to "Logout", destroy_user_session_path, method: :delete, :class => "button large fit" %></li>
+						<% else %>
+							<li><%= link_to "Register", new_user_registration_path, class: "button large fit" %></li>
+							<li><%= link_to "Login", new_user_session_path, class: "button large fit" %></li>
+						<% end %>
 					</ul>
 				</section>
 

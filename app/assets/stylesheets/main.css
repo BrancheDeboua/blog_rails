@@ -3219,11 +3219,12 @@ input, select, textarea {
 
 					#header .main ul li > a {
 						text-decoration: none;
+						font-weight: bold;
 						border-bottom: 0;
 						color: #aaaaaa;
 						overflow: hidden;
 						position: relative;
-						text-indent: 4em;
+						right: 1.5em;
 						width: 4em;
 					}
 
