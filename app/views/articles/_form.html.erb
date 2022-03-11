@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :article_text, style: "display: block" %>
-    <%= form.text_area :article_text %>
+    <%= form.text_area :article_text, style: "min-height: 200px;" %>
   </div>
 
   <div>
@@ -32,13 +32,8 @@
   </div>
 
   <div>
-    <%= form.label :likes, style: "display: block" %>
-    <%= form.number_field :likes %>
-  </div>
-
-  <div>
-    <%= form.label :dislikes, style: "display: block" %>
-    <%= form.number_field :dislikes %>
+    <%= form.hidden_field :likes %>
+    <%= form.hidden_field :dislikes %>
   </div>
 
   <div>

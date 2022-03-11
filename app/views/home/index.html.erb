@@ -1,3 +1,6 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'index' %>
+<% end %>
 <div id="main">
 
 	<% @articles.each do |article| %>
@@ -5,8 +8,10 @@
 			<header>
 				<div class="title">
 					<h2><a href="/article/<%= article.id %>"><%= article.title %></a></h2>
-					<time style="display:inline-block; width:49%;" class="published" datetime="2015-11-01">November 1, 2015</time>
-					<div style="display:inline-block; width:49%; text-align:right;" class="author-info"><a href="#" class="author"><span style="margin:0;" class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a></span>
+				</div>
+				<div class="meta">
+					<time class="published" datetime="2015-11-01">November 1, 2015</time>
+					<div class="author-info"><a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a></span>
 				</div>
 			</header>
 			<a href="/article/<%= article.id %>" class="image featured"><img src="<%= article.image_url %>" alt="" /></a>
@@ -27,7 +32,7 @@
 		<li><a href="" class="disabled button large previous">Previous Page</a></li>
 		<li><a href="#" class="button large next">Next Page</a></li>
 		<% if user_signed_in? %>
-			<li><%= link_to 'Add', new_article_path, class: "button large" %></li>
+			<li class="right"><%= link_to 'Add', new_article_path, class: "button large" %></li>
 		<% end %>
 	</ul>
 

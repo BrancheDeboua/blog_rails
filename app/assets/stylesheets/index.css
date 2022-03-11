@@ -1,14 +1,10 @@
-.title time{
-    display: inline-block!important;
-    width: 49%!important;
+#main ul {
+    display: -webkit-flex;
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start;
 }
 
-.class-info{
-    display: inline-block!important;
-    width: 49%!important;
-    text-align: right!important;
-}
-
-.class-info span{
-    margin: 0!important;
+.right{
+    margin-left: auto;
 }
