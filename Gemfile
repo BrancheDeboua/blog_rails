@@ -12,6 +12,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'rails_admin', ['>= 3.0.0.rc3', '< 4']
 
 # gem "redis", "~> 4.0"
 # gem "kredis"
@@ -36,3 +37,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "sassc-rails"
