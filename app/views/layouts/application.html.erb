@@ -13,10 +13,11 @@
   </head>
 
   <body>
-    
-      <%= render 'home/header' %>
-      <%= yield %>
-      <%= render 'home/footer' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'home/header' %>
+    <%= yield %>
+    <%= render 'home/footer' %>
     
     <script src="<%= asset_path('js/jquery.min') %>"></script>
     <script src="<%= asset_path('js/browser.min') %>"></script>
