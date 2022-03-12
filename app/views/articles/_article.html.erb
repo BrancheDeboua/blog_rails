@@ -9,7 +9,7 @@
 
   <div class="meta">
 
-    <time class="published" datetime="2015-11-01"><%= article.created_at.strftime '%d %B %Y' %></time>
+    <time class="published" datetime="2015-11-01"><%= get_date article.created_at %></time>
     <a href="#" class="author"><span class="name"><%= author.first_name %> <%= author.last_name %></span><img src="images/avatar.jpg" alt="" /></a>
 
   </div>
