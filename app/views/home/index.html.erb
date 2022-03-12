@@ -10,8 +10,9 @@
 					<h2><a href="/article/<%= article.id %>"><%= article.title %></a></h2>
 				</div>
 				<div class="meta">
+					<time class="published" datetime="2015-11-01"><%= article.created_at.strftime '%d %B %Y' %></time>
 					<% @authors.each do |author| %>
-						<time class="published" datetime="2015-11-01">November 1, 2015</time>
+						<%# Maybe I can use a helper to help me with that %>
 						<% if author.id == article.author_id %>
 							<div class="author-info"><a href="#" class="author"><span class="name"><%= author.first_name%> <%= author.last_name %></span><!--<img src="images/avatar.jpg" alt="" />--></a></span>
 						<% end %>
@@ -25,7 +26,6 @@
 					<li><a href="/article/<%= article.id %>" class="button large">Continue Reading</a></li>
 				</ul>
 				<ul class="stats">
-					<li><a href="#">General</a></li>
 					<li><a href="#" class="icon solid fa-heart"><%= article.likes %></a></li>
 					<li><a href="#" class="icon solid fa-comment"><%= article.dislikes %></a></li>
 				</ul>
@@ -35,7 +35,7 @@
 	<ul class="actions pagination">
 		<li><a href="" class="disabled button large previous">Previous Page</a></li>
 		<li><a href="#" class="button large next">Next Page</a></li>
-		<% if user_signed_in? %>
+		<% if @is_author %>
 			<li class="right"><%= link_to 'Add', new_article_path, class: "button large" %></li>
 		<% end %>
 	</ul>
