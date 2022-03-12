@@ -13,10 +13,14 @@
 
   <% if is_author @author.id %>
     <div>
-      <%= link_to "Edit this article", edit_article_path(@article) %> |
-      <%= link_to "Back to articles", articles_path %>
-
-      <%= button_to "Destroy this article", @article, method: :delete %>
+      <ul class="actions author-control">
+        <li>
+          <%= link_to "Edit this article", edit_article_path(@article), class: "button large" %>
+        </li>
+        <li>
+          <%= button_to "Destroy this article", @article, method: :delete, class: "button large" %>
+        </li>
+      </ul>
     </div>
   <% end %>
 </div>

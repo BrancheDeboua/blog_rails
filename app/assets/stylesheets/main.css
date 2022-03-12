@@ -3624,3 +3624,13 @@ input, select, textarea {
 .author-info{
 	text-align: center;
 }
+
+.author-control{
+	justify-content: flex-end;
+}
+
+.featured-image{
+	max-height: 400px;
+	object-fit: cover;
+
+}
