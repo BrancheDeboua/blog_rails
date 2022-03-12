@@ -1772,10 +1772,10 @@ input, select, textarea {
 /* Author */
 
 	.author {
-		display: -moz-flex;
+		/*display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
-		display: flex;
+		display: flex;*/
 		-moz-flex-direction: row;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
@@ -1795,6 +1795,7 @@ input, select, textarea {
 		letter-spacing: 0.25em;
 		text-transform: uppercase;
 		white-space: nowrap;
+		/*width: 100%;*/
 	}
 
 		.author .name {
@@ -1802,9 +1803,8 @@ input, select, textarea {
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
 			transition: border-bottom-color 0.2s ease;
-			border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+			/*border-bottom: dotted 1px rgba(160, 160, 160, 0.65);*/
 			display: block;
-			margin: 0 1.5em 0 0;
 		}
 
 		.author img {
@@ -2771,7 +2771,7 @@ input, select, textarea {
 				}
 
 			.post > header .meta {
-				padding: 3.75em 3em 1.75em 3em ;
+				padding: 3.5em 3em 2em 3em ;
 				border-left: solid 1px rgba(160, 160, 160, 0.3);
 				min-width: 17em;
 				text-align: right;
@@ -2796,6 +2796,7 @@ input, select, textarea {
 					margin-top: 0.5em;
 					text-transform: uppercase;
 					white-space: nowrap;
+					text-align:center;
 				}
 
 		.post > a.image.featured {
@@ -3618,4 +3619,8 @@ input, select, textarea {
 	margin-bottom: 2em;
 	max-height: 100px;
 	overflow: hidden;
+}
+
+.author-info{
+	text-align: center;
 }

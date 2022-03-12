@@ -10,8 +10,12 @@
 					<h2><a href="/article/<%= article.id %>"><%= article.title %></a></h2>
 				</div>
 				<div class="meta">
-					<time class="published" datetime="2015-11-01">November 1, 2015</time>
-					<div class="author-info"><a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a></span>
+					<% @authors.each do |author| %>
+						<time class="published" datetime="2015-11-01">November 1, 2015</time>
+						<% if author.id == article.author_id %>
+							<div class="author-info"><a href="#" class="author"><span class="name"><%= author.first_name%> <%= author.last_name %></span><!--<img src="images/avatar.jpg" alt="" />--></a></span>
+						<% end %>
+					<% end %>
 				</div>
 			</header>
 			<a href="/article/<%= article.id %>" class="image featured"><img src="<%= article.image_url %>" alt="" /></a>
