@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    author_id = Article.select(:author_id).where("id = ?", params[:id])[0]
+    @author = Author.find(author_id.author_id)
   end
 
   # GET /articles/new

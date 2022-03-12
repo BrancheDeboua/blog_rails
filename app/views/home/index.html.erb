@@ -7,7 +7,7 @@
 		<article class="post">
 			<header>
 				<div class="title">
-					<h2><a href="/article/<%= article.id %>"><%= article.title %></a></h2>
+					<h2><a href="/articles/<%= article.id %>"><%= article.title %></a></h2>
 				</div>
 				<div class="meta">
 					<time class="published" datetime="2015-11-01"><%= article.created_at.strftime '%d %B %Y' %></time>
@@ -19,11 +19,11 @@
 					<% end %>
 				</div>
 			</header>
-			<a href="/article/<%= article.id %>" class="image featured"><img src="<%= article.image_url %>" alt="" /></a>
+			<a href="/articles/<%= article.id %>" class="image featured"><img src="<%= article.image_url %>" alt="" /></a>
 			<div class="article-description"><%= raw article.article_text %></div>
 			<footer>
 				<ul class="actions">
-					<li><a href="/article/<%= article.id %>" class="button large">Continue Reading</a></li>
+					<li><a href="/articles/<%= article.id %>" class="button large">Continue Reading</a></li>
 				</ul>
 				<ul class="stats">
 					<li><a href="#" class="icon solid fa-heart"><%= article.likes %></a></li>

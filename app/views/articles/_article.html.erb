@@ -1,32 +1,34 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
+<header>
 
-  <p>
-    <strong>Author:</strong>
-    <%= article.author_id %>
-  </p>
+  <div class="title">
 
-  <p>
-    <strong>Article text:</strong>
-    <%= article.article_text %>
-  </p>
+    <h2><%= article.title %></h2>
+    <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+  
+  </div>
 
-  <p>
-    <strong>Image url:</strong>
-    <%= article.image_url %>
-  </p>
+  <div class="meta">
 
-  <p>
-    <strong>Likes:</strong>
-    <%= article.likes %>
-  </p>
+    <time class="published" datetime="2015-11-01"><%= article.created_at.strftime '%d %B %Y' %></time>
+    <a href="#" class="author"><span class="name"><%= author.first_name %> <%= author.last_name %></span><img src="images/avatar.jpg" alt="" /></a>
 
-  <p>
-    <strong>Dislikes:</strong>
-    <%= article.dislikes %>
-  </p>
+  </div>
 
+</header>
+
+<span class="image featured"><img src="<%= article.image_url %>" alt="" /></span>
+<div class="article-text">
+  <%= raw article.article_text %>
 </div>
+
+<footer>
+
+  <ul class="stats">
+
+    <li><a href="#" class="icon solid fa-heart">28</a></li>
+    <li><a href="#" class="icon solid fa-comment">128</a></li>
+    
+  </ul>
+
+</footer>
+
