@@ -1,6 +1,7 @@
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
+  # config.authorize_with do redirect_to main_app.root_path unless is_author current_user.id end
   ### Popular gems integration
 
   ## == Devise ==

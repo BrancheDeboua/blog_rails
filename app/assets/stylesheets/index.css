@@ -1,4 +1,4 @@
-#main ul {
+#main ul:last-child{
     display: -webkit-flex;
     display: flex;
     list-style-type: none;

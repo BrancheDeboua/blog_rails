@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
-    author_id = Article.select(:author_id).where("id = ?", params[:id])[0]
-    @author = Author.find(author_id.author_id)
+    @author = Author.find(@article.author_id)
   end
 
   # GET /articles/new
@@ -14,6 +13,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    unless current_user.id == @article.author_id
+      redirect_to article_url(@article)
+    end
   end
 
   # POST /articles or /articles.json
@@ -46,11 +48,15 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article.destroy
+    if current_user.id == @article.author_id
+      @article.destroy
 
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "Article was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to root_path
     end
   end
 
