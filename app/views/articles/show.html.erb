@@ -11,7 +11,7 @@
     <%= render @article, author: @author %>
   </article>
 
-  <% if is_author @author.id %>
+  <% if is_author_of_article @author.id %>
     <div>
       <ul class="actions author-control">
         <li>
