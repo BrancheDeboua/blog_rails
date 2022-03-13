@@ -8,7 +8,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
-    @article = Article.new
+    author = Author.where('users_id = ?', current_user.id)
+    unless author.blank?
+      @article = Article.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /articles/1/edit
