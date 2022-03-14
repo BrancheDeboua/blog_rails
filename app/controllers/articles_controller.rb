@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @author = Author.find(@article.author_id)
+    views = @article.views + 1
+    @article.update(views: views)
   end
 
   # GET /articles/new
@@ -74,5 +76,8 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :author_id, :article_text, :image_url, :likes, :dislikes)
+      p '=========================================='
+      p params
+      p '=========================================='
     end
 end

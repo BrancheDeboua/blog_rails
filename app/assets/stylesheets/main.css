@@ -3632,5 +3632,8 @@ input, select, textarea {
 .featured-image{
 	max-height: 400px;
 	object-fit: cover;
+}
 
+#error_explanation ul{
+	display:block;
 }
