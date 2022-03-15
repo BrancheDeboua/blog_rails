@@ -3,10 +3,6 @@
 <% end %>
 
 <div id="main">
-  <% if notice %>
-    <p style="color: green"><%= notice %></p>
-  <% end %>
-
   <article class="post">
     <%= render @article, author: @author %>
   </article>
