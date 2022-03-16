@@ -33,7 +33,7 @@
 		</article>
 	<% end %>
 	<ul class="actions pagination">
-      <% if @previous %>
+      <% if @previous and @os != 0 %>
         <li><a href="/<%= @os - 1 %>" class="button large previous">Previous Page</a></li>
       <% else %>
 		<li><a href="" class="disabled button large previous">Previous Page</a></li>

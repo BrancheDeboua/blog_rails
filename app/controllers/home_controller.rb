@@ -10,7 +10,7 @@ class HomeController < ApplicationController
       @articles = Article.all.order("created_at DESC").limit(5)
     end
 
-    if @articles.blank? or params[:id].to_i < 0
+    if @articles.blank? or (params[:id].to_i <= 0 and params[:id] != nil)
       redirect_to root_path
     end
 
@@ -33,7 +33,7 @@ class HomeController < ApplicationController
   end
 
   def if_last(rows)
-    last = Article.last
+    last = Article.order("created_at DESC").last
     rows.each do |row|
       if last.id == row.id
         return false

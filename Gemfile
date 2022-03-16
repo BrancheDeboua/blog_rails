@@ -13,6 +13,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'rails_admin', ['>= 3.0.0.rc3', '< 4']
+gem 'faker'
 
 # gem "redis", "~> 4.0"
 # gem "kredis"
