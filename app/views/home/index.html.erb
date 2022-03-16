@@ -33,8 +33,17 @@
 		</article>
 	<% end %>
 	<ul class="actions pagination">
+      <% if @previous %>
+        <li><a href="/<%= @os - 1 %>" class="button large previous">Previous Page</a></li>
+      <% else %>
 		<li><a href="" class="disabled button large previous">Previous Page</a></li>
-		<li><a href="#" class="button large next">Next Page</a></li>
+      <% end %>
+
+      <% if @next %>
+        <li><a href="/<%= @os + 1 %>" class="button large next">Next Page</a></li>
+      <% else %>
+		<li><a href="/<%= @os + 1 %>" class="disabled button large next">Next Page</a></li>
+      <% end %>
 		<% if @is_author %>
 			<li class="right"><%= link_to 'Add', new_article_path, class: "button large" %></li>
 		<% end %>
@@ -71,7 +80,7 @@
 			<li>
 				<article>
 					<header>
-                      <h3><a href="/articles/article.id"><%= article.title %></a></h3>
+                      <h3><a href="/articles/<%= article.id %>"><%= article.title %></a></h3>
 						<time class="published" datetime="<%= get_date article.created_at %>"><%= get_date article.created_at %></time>
 					</header>
                     <a href="" class="image"><img src="<%= article.image_url %>" alt="" /></a>
