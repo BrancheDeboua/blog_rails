@@ -3637,3 +3637,6 @@ input, select, textarea {
 #error_explanation ul{
 	display:block;
 }
+
+.message-from-admin{
+}

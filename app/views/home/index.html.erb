@@ -10,7 +10,7 @@
 					<h2><a href="/articles/<%= article.id %>"><%= article.title %></a></h2>
 				</div>
 				<div class="meta">
-					<time class="published" datetime="2015-11-01"><%= get_date article.created_at %></time>
+					<time class="published" datetime="<%= get_date article.created_at %>"><%= get_date article.created_at %></time>
 					<% @authors.each do |author| %>
 						<%# Maybe I can use a helper to help me with that %>
 						<% if author.id == article.author_id %>
@@ -67,21 +67,23 @@
 
 	<section>
 		<ul class="posts">
+          <% @most_viewed.each do |article| %>
 			<li>
 				<article>
 					<header>
-						<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
-						<time class="published" datetime="2015-10-20">October 20, 2015</time>
+                      <h3><a href="/articles/article.id"><%= article.title %></a></h3>
+						<time class="published" datetime="<%= get_date article.created_at %>"><%= get_date article.created_at %></time>
 					</header>
-					<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                    <a href="" class="image"><img src="<%= article.image_url %>" alt="" /></a>
 				</article>
 			</li>
+          <% end %>
 		</ul>
 	</section>
 
 	<section class="blurb">
 		<h2>About</h2>
-		<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+		<p class="message-from-admin">My name is Samuel, and I'm a proud self thaught programmer. I've been learning for a long time now and show no signs of stopping down, it's just too much fun!</p>
 		<ul class="actions">
 			<li><a href="/about" class="button">Learn More</a></li>
 		</ul>
